@@ -1,0 +1,49 @@
+//! **************************************************************************
+// Written by: Map P.68d on Fri Mar 14 16:51:46 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led<0>" LOCATE = SITE "N24" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "M24" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "L24" LEVEL 1;
+COMP "clk" LOCATE = SITE "M21" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "L23" LEVEL 1;
+COMP "led<4>" LOCATE = SITE "K24" LEVEL 1;
+COMP "led<5>" LOCATE = SITE "H24" LEVEL 1;
+COMP "led<6>" LOCATE = SITE "D24" LEVEL 1;
+COMP "rx" LOCATE = SITE "A21" LEVEL 1;
+COMP "tx" LOCATE = SITE "A20" LEVEL 1;
+COMP "rst" LOCATE = SITE "N23" LEVEL 1;
+PIN rst_pin<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP sys_clk_pin = BEL "UARTCon/BRG/brojac_0" BEL "UARTCon/BRG/brojac_1"
+        BEL "UARTCon/BRG/brojac_2" BEL "UARTCon/BRG/brojac_3" BEL
+        "UARTCon/BRG/brojac_4" BEL "UARTCon/BRG/brojac_5" BEL
+        "UARTCon/BRG/brojac_6" BEL "UARTCon/BRG/brojac_7" BEL
+        "UARTCon/UTx/current_state_FSM_FFd1" BEL
+        "UARTCon/UTx/current_state_FSM_FFd2" BEL "UARTCon/UTx/bit_counter_2"
+        BEL "UARTCon/UTx/bit_counter_1" BEL "UARTCon/UTx/bit_counter_0" BEL
+        "UARTCon/UTx/tick_counter_3" BEL "UARTCon/UTx/tick_counter_2" BEL
+        "UARTCon/UTx/tick_counter_1" BEL "UARTCon/UTx/tick_counter_0" BEL
+        "UARTCon/UTx/tx_reg" BEL "UARTCon/URx/current_state_FSM_FFd1" BEL
+        "UARTCon/URx/current_state_FSM_FFd2" BEL "UARTCon/URx/bit_counter_2"
+        BEL "UARTCon/URx/bit_counter_1" BEL "UARTCon/URx/bit_counter_0" BEL
+        "UARTCon/URx/ledReg_2" BEL "UARTCon/URx/ledReg_0" BEL
+        "UARTCon/URx/tick_counter_3" BEL "UARTCon/URx/tick_counter_2" BEL
+        "UARTCon/URx/tick_counter_1" BEL "UARTCon/URx/tick_counter_0" BEL
+        "EchoModul/w_start_reg" BEL "EchoModul/d_out_reg_7" BEL
+        "EchoModul/d_out_reg_6" BEL "EchoModul/d_out_reg_5" BEL
+        "EchoModul/d_out_reg_4" BEL "EchoModul/d_out_reg_3" BEL
+        "EchoModul/d_out_reg_2" BEL "EchoModul/d_out_reg_1" BEL
+        "EchoModul/d_out_reg_0" BEL "UARTCon/UTx/reg_7" BEL
+        "UARTCon/UTx/reg_6" BEL "UARTCon/UTx/reg_5" BEL "UARTCon/UTx/reg_4"
+        BEL "UARTCon/UTx/reg_3" BEL "UARTCon/UTx/reg_2" BEL
+        "UARTCon/UTx/reg_1" BEL "UARTCon/UTx/reg_0" BEL "UARTCon/URx/reg_7"
+        BEL "UARTCon/URx/reg_6" BEL "UARTCon/URx/reg_5" BEL
+        "UARTCon/URx/reg_4" BEL "UARTCon/URx/reg_3" BEL "UARTCon/URx/reg_2"
+        BEL "UARTCon/URx/reg_1" BEL "UARTCon/URx/reg_0" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+PIN rst_pins<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pins<0>" TIG;
+SCHEMATIC END;
+

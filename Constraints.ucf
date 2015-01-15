@@ -1,0 +1,8 @@
+NET "CLK" TNM_NET = sys_clk_pin; 
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 27000 kHz; 
+NET clk LOC = "M21" | IOSTANDARD = "LVDS_33"; 
+ 
+NET rst LOC = "AE24" | IOSTANDARD = "LVCMOS33" | TIG; 
+ 
+NET rx LOC = "A21" | IOSTANDARD = "LVCMOS33"; 
+NET tx LOC = "A20" | IOSTANDARD = "LVCMOS33"; 

@@ -1,0 +1,1213 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: UARTController.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "UARTController.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "UARTController"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-fgg676
+
+---- Source Options
+Top Module Name                    : UARTController
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\student\LRI2\UART\UARTTransmitter.vhd" into library work
+Parsing entity <UARTTransmitter>.
+Parsing architecture <Behavioral> of entity <uarttransmitter>.
+Parsing VHDL file "C:\Users\student\LRI2\UART\UARTReciever.vhd" into library work
+Parsing entity <UARTReciever>.
+Parsing architecture <Behavioral> of entity <uartreciever>.
+Parsing VHDL file "C:\Users\student\LRI2\UART\BaudRateGenerator.vhd" into library work
+Parsing entity <BaudRateGenerator>.
+Parsing architecture <Behavioral> of entity <baudrategenerator>.
+Parsing VHDL file "C:\Users\student\LRI2\UART\UARTController.vhd" into library work
+Parsing entity <UARTController>.
+Parsing architecture <Behavioral> of entity <uartcontroller>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <UARTController> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <BaudRateGenerator> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <UARTReciever> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <UARTTransmitter> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <UARTController>.
+    Related source file is "C:\Users\student\LRI2\UART\UARTController.vhd".
+    Summary:
+	no macro.
+Unit <UARTController> synthesized.
+
+Synthesizing Unit <BaudRateGenerator>.
+    Related source file is "C:\Users\student\LRI2\UART\BaudRateGenerator.vhd".
+    Found 32-bit register for signal <brojac>.
+    Found 32-bit adder for signal <brojac[31]_GND_4_o_add_0_OUT> created at line 50.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+Unit <BaudRateGenerator> synthesized.
+
+Synthesizing Unit <UARTReciever>.
+    Related source file is "C:\Users\student\LRI2\UART\UARTReciever.vhd".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit adder for signal <bit_counter[31]_GND_5_o_add_12_OUT> created at line 71.
+    Found 32-bit adder for signal <tick_counter[31]_GND_5_o_add_20_OUT> created at line 79.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rx_done>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32-bit comparator greater for signal <GND_5_o_tick_counter[31]_LessThan_3_o> created at line 55
+    Found 32-bit comparator greater for signal <GND_5_o_bit_counter[31]_LessThan_9_o> created at line 65
+    Found 32-bit comparator greater for signal <GND_5_o_tick_counter[31]_LessThan_10_o> created at line 78
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  84 Latch(s).
+	inferred   3 Comparator(s).
+	inferred 197 Multiplexer(s).
+Unit <UARTReciever> synthesized.
+
+Synthesizing Unit <UARTTransmitter>.
+    Related source file is "C:\Users\student\LRI2\UART\UARTTransmitter.vhd".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit adder for signal <bit_counter[31]_GND_120_o_add_6_OUT> created at line 64.
+    Found 32-bit adder for signal <tick_counter[31]_GND_120_o_add_13_OUT> created at line 73.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_counter[2]_reg[7]_Mux_5_o> created at line 63.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tx>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tick_counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bit_counter<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <tx_done>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <state<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32-bit comparator greater for signal <GND_120_o_bit_counter[31]_LessThan_3_o> created at line 58
+    Found 32-bit comparator greater for signal <GND_120_o_tick_counter[31]_LessThan_4_o> created at line 72
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  77 Latch(s).
+	inferred   2 Comparator(s).
+	inferred 134 Multiplexer(s).
+Unit <UARTTransmitter> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 5
+# Registers                                            : 1
+ 32-bit register                                       : 1
+# Latches                                              : 161
+ 1-bit latch                                           : 161
+# Comparators                                          : 5
+ 32-bit comparator greater                             : 5
+# Multiplexers                                         : 331
+ 1-bit 2-to-1 multiplexer                              : 326
+ 1-bit 8-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <BRG> is unconnected in block <UARTController>.
+   It will be removed from the design.
+WARNING:Xst:1293 - FF/Latch <state_30> has a constant value of 0 in block <UTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_done> (without init value) has a constant value of 1 in block <UTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <state_30> has a constant value of 0 in block <URx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rx_done> (without init value) has a constant value of 1 in block <URx>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <BaudRateGenerator>.
+The following registers are absorbed into counter <brojac>: 1 register on signal <brojac>.
+Unit <BaudRateGenerator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 4
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Comparators                                          : 5
+ 32-bit comparator greater                             : 5
+# Multiplexers                                         : 331
+ 1-bit 2-to-1 multiplexer                              : 326
+ 1-bit 8-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <state_30> has a constant value of 0 in block <UARTTransmitter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_done> (without init value) has a constant value of 1 in block <UARTTransmitter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <state_30> has a constant value of 0 in block <UARTReciever>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rx_done> (without init value) has a constant value of 1 in block <UARTReciever>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    state_0 in unit <UARTReciever>
+    state_0 in unit <UARTTransmitter>
+
+
+Optimizing unit <UARTController> ...
+
+Optimizing unit <UARTTransmitter> ...
+
+Optimizing unit <UARTReciever> ...
+WARNING:Xst:2677 - Node <BRG/brojac_0> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_1> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_2> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_3> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_4> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_5> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_6> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_7> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_8> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_9> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_10> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_11> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_12> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_13> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_14> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_15> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_16> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_17> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_18> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_19> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_20> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_21> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_22> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_23> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_24> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_25> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_26> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_27> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_28> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_29> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_30> of sequential type is unconnected in block <UARTController>.
+WARNING:Xst:2677 - Node <BRG/brojac_31> of sequential type is unconnected in block <UARTController>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block UARTController, actual ratio is 1.
+Latch UTx/state_1 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : UARTController.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 680
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 124
+#      LUT2                        : 10
+#      LUT3                        : 6
+#      LUT4                        : 9
+#      LUT5                        : 57
+#      LUT6                        : 176
+#      MUXCY                       : 157
+#      MUXF7                       : 6
+#      VCC                         : 1
+#      XORCY                       : 128
+# FlipFlops/Latches                : 158
+#      LD                          : 50
+#      LDC                         : 1
+#      LDCE_1                      : 3
+#      LDE                         : 8
+#      LDE_1                       : 96
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 21
+#      IBUF                        : 10
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45fgg676-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             141  out of  54576     0%  
+ Number of Slice LUTs:                  387  out of  27288     1%  
+    Number used as Logic:               387  out of  27288     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    396
+   Number with an unused Flip Flop:     255  out of    396    64%  
+   Number with an unused LUT:             9  out of    396     2%  
+   Number of fully used LUT-FF pairs:   132  out of    396    33%  
+   Number of unique control sets:        20
+
+IO Utilization: 
+ Number of IOs:                          23
+ Number of bonded IOBs:                  21  out of    358     5%  
+    IOB Flip Flops/Latches:              17
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------------------------------------------------+-----------------------------+-------+
+Clock Signal                                                                                                         | Clock buffer(FF name)       | Load  |
+---------------------------------------------------------------------------------------------------------------------+-----------------------------+-------+
+UTx/GND_120_o_GND_120_o_MUX_1000_o(UTx/Mmux_GND_120_o_GND_120_o_MUX_1000_o11:O)                                      | NONE(*)(UTx/tx)             | 1     |
+UTx/state_0_D(UTx/GND_120_o_tx_start_AND_340_o1:O)                                                                   | BUFG(*)(UTx/bit_counter_2)  | 64    |
+UTx/GND_120_o_GND_120_o_AND_341_o(UTx/GND_120_o_GND_120_o_AND_341_o1:O)                                              | NONE(*)(UTx/state_1)        | 2     |
+UTx/GND_120_o_state[31]_equal_1_o(UTx/GND_120_o_state[31]_equal_1_o<29>1:O)                                          | NONE(*)(UTx/reg_0)          | 8     |
+URx/GND_5_o_rx_AND_1_o(URx/GND_5_o_rx_AND_1_o1:O)                                                                    | BUFG(*)(URx/tick_counter_31)| 32    |
+URx/GND_5_o_GND_5_o_AND_192_o(URx/GND_5_o_GND_5_o_AND_192_o:O)                                                       | BUFG(*)(URx/bit_counter_31) | 32    |
+URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322(URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o13221:O)| NONE(*)(URx/state_1)        | 1     |
+URx/GND_5_o_GND_5_o_AND_291_o(URx/GND_5_o_GND_5_o_AND_291_o:O)                                                       | NONE(*)(URx/d_out_0)        | 8     |
+URx/GND_5_o_GND_5_o_AND_189_o(URx/GND_5_o_GND_5_o_AND_189_o1:O)                                                      | NONE(*)(URx/reg_0)          | 1     |
+URx/GND_5_o_GND_5_o_AND_184_o(URx/GND_5_o_GND_5_o_AND_184_o1:O)                                                      | NONE(*)(URx/reg_1)          | 1     |
+URx/GND_5_o_GND_5_o_AND_179_o(URx/GND_5_o_GND_5_o_AND_179_o1:O)                                                      | NONE(*)(URx/reg_2)          | 1     |
+URx/GND_5_o_GND_5_o_AND_174_o(URx/GND_5_o_GND_5_o_AND_174_o1:O)                                                      | NONE(*)(URx/reg_3)          | 1     |
+URx/GND_5_o_GND_5_o_AND_169_o(URx/GND_5_o_GND_5_o_AND_169_o1:O)                                                      | NONE(*)(URx/reg_4)          | 1     |
+URx/GND_5_o_GND_5_o_AND_159_o(URx/GND_5_o_GND_5_o_AND_159_o1:O)                                                      | NONE(*)(URx/reg_6)          | 1     |
+URx/GND_5_o_GND_5_o_AND_154_o(URx/GND_5_o_GND_5_o_AND_154_o1:O)                                                      | NONE(*)(URx/reg_7)          | 1     |
+URx/GND_5_o_GND_5_o_AND_164_o(URx/GND_5_o_GND_5_o_AND_164_o1:O)                                                      | NONE(*)(URx/reg_5)          | 1     |
+UTx/state_0_G(UTx/state_0_G:O)                                                                                       | NONE(*)(UTx/state_0)        | 1     |
+URx/state_0_G(URx/state_0_G:O)                                                                                       | NONE(*)(URx/state_0)        | 1     |
+---------------------------------------------------------------------------------------------------------------------+-----------------------------+-------+
+(*) These 18 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.584ns (Maximum Frequency: 131.857MHz)
+   Minimum input arrival time before clock: 4.029ns
+   Maximum output required time after clock: 4.174ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'UTx/state_0_D'
+  Clock period: 7.045ns (frequency: 141.937MHz)
+  Total number of paths / destination ports: 20160 / 128
+-------------------------------------------------------------------------
+Delay:               7.045ns (Levels of Logic = 3)
+  Source:            UTx/bit_counter_28 (LATCH)
+  Destination:       UTx/bit_counter_2 (LATCH)
+  Source Clock:      UTx/state_0_D rising
+  Destination Clock: UTx/state_0_D rising
+
+  Data Path: UTx/bit_counter_28 to UTx/bit_counter_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q            4   0.581   1.080  UTx/bit_counter_28 (UTx/bit_counter_28)
+     LUT4:I0->O            2   0.254   1.181  UTx/Mcompar_GND_120_o_bit_counter[31]_LessThan_3_o_lut<5> (UTx/GND_120_o_GND_120_o_AND_342_o6)
+     LUT6:I0->O           38   0.254   1.620  UTx/GND_120_o_GND_120_o_AND_342_o7 (UTx/GND_120_o_GND_120_o_AND_342_o)
+     LUT5:I4->O           32   0.254   1.519  UTx/Mmux_GND_120_o_GND_120_o_MUX_1164_o11 (UTx/GND_120_o_GND_120_o_MUX_1164_o)
+     LDE_1:GE                  0.302          UTx/bit_counter_31
+    ----------------------------------------
+    Total                      7.045ns (1.645ns logic, 5.400ns route)
+                                       (23.3% logic, 76.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'UTx/GND_120_o_GND_120_o_AND_341_o'
+  Clock period: 6.358ns (frequency: 157.273MHz)
+  Total number of paths / destination ports: 10 / 6
+-------------------------------------------------------------------------
+Delay:               6.358ns (Levels of Logic = 3)
+  Source:            UTx/state_1_1 (LATCH)
+  Destination:       UTx/state_1 (LATCH)
+  Source Clock:      UTx/GND_120_o_GND_120_o_AND_341_o rising
+  Destination Clock: UTx/GND_120_o_GND_120_o_AND_341_o rising
+
+  Data Path: UTx/state_1_1 to UTx/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCE_1:G->Q           1   0.581   1.112  UTx/state_1_1 (UTx/state_1_1)
+     LUT6:I1->O            1   0.254   1.112  UTx/GND_120_o_GND_120_o_AND_342_o1 (UTx/GND_120_o_GND_120_o_AND_342_o1)
+     LUT6:I1->O           38   0.254   1.728  UTx/GND_120_o_GND_120_o_AND_342_o7 (UTx/GND_120_o_GND_120_o_AND_342_o)
+     LUT5:I3->O            3   0.250   0.765  UTx/GND_120_o_GND_120_o_OR_289_o1 (UTx/GND_120_o_GND_120_o_OR_289_o)
+     LDCE_1:GE                 0.302          UTx/state_1
+    ----------------------------------------
+    Total                      6.358ns (1.641ns logic, 4.717ns route)
+                                       (25.8% logic, 74.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'URx/GND_5_o_rx_AND_1_o'
+  Clock period: 7.584ns (frequency: 131.857MHz)
+  Total number of paths / destination ports: 12368 / 64
+-------------------------------------------------------------------------
+Delay:               7.584ns (Levels of Logic = 5)
+  Source:            URx/tick_counter_1 (LATCH)
+  Destination:       URx/tick_counter_12 (LATCH)
+  Source Clock:      URx/GND_5_o_rx_AND_1_o rising
+  Destination Clock: URx/GND_5_o_rx_AND_1_o rising
+
+  Data Path: URx/tick_counter_1 to URx/tick_counter_12
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q            4   0.581   1.234  URx/tick_counter_1 (URx/tick_counter_1)
+     LUT6:I1->O            2   0.254   1.156  URx/GND_5_o_GND_5_o_AND_21_o11 (URx/GND_5_o_GND_5_o_AND_21_o11)
+     LUT6:I1->O            7   0.254   0.910  URx/GND_5_o_GND_5_o_AND_21_o17 (URx/GND_5_o_GND_5_o_AND_21_o1)
+     LUT6:I5->O            1   0.254   0.000  URx/GND_5_o_GND_5_o_OR_132_o_SW0_SW2_G (N21)
+     MUXF7:I1->O           2   0.175   1.002  URx/GND_5_o_GND_5_o_OR_132_o_SW0_SW2 (N11)
+     LUT6:I2->O           17   0.254   1.208  URx/GND_5_o_GND_5_o_OR_132_o (URx/GND_5_o_GND_5_o_OR_132_o)
+     LDE_1:GE                  0.302          URx/tick_counter_30
+    ----------------------------------------
+    Total                      7.584ns (2.074ns logic, 5.510ns route)
+                                       (27.3% logic, 72.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'URx/GND_5_o_GND_5_o_AND_192_o'
+  Clock period: 5.363ns (frequency: 186.474MHz)
+  Total number of paths / destination ports: 2384 / 32
+-------------------------------------------------------------------------
+Delay:               5.363ns (Levels of Logic = 8)
+  Source:            URx/bit_counter_4 (LATCH)
+  Destination:       URx/bit_counter_28 (LATCH)
+  Source Clock:      URx/GND_5_o_GND_5_o_AND_192_o falling
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_192_o falling
+
+  Data Path: URx/bit_counter_4 to URx/bit_counter_28
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               5   0.581   1.271  URx/bit_counter_4 (URx/bit_counter_4)
+     LUT5:I0->O            1   0.254   0.000  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_lut<0> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<0> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<1> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<2> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<3> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<4> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<4>)
+     MUXCY:CI->O          69   0.235   2.423  URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<5> (URx/Mcompar_GND_5_o_bit_counter[31]_LessThan_9_o_cy<5>)
+     LUT6:I0->O            1   0.254   0.000  URx/Mmux_bit_counter[31]_bit_counter[31]_MUX_555_o132_cy (URx/bit_counter[31]_bit_counter[31]_MUX_576_o)
+     LD:D                      0.036          URx/bit_counter_28
+    ----------------------------------------
+    Total                      5.363ns (1.668ns logic, 3.694ns route)
+                                       (31.1% logic, 68.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322'
+  Clock period: 4.970ns (frequency: 201.215MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               4.970ns (Levels of Logic = 2)
+  Source:            URx/state_1 (LATCH)
+  Destination:       URx/state_1 (LATCH)
+  Source Clock:      URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322 rising
+  Destination Clock: URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322 rising
+
+  Data Path: URx/state_1 to URx/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCE_1:G->Q          80   0.581   2.162  URx/state_1 (URx/state_1)
+     LUT4:I2->O            3   0.250   0.765  URx/GND_5_o_GND_5_o_AND_19_o7 (URx/GND_5_o_GND_5_o_AND_19_o)
+     MUXF7:S->O            2   0.185   0.725  URx/GND_5_o_GND_5_o_OR_67_o2 (URx/GND_5_o_GND_5_o_OR_67_o)
+     LDCE_1:GE                 0.302          URx/state_1
+    ----------------------------------------
+    Total                      4.970ns (1.318ns logic, 3.652ns route)
+                                       (26.5% logic, 73.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'UTx/state_0_G'
+  Clock period: 2.990ns (frequency: 334.448MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.990ns (Levels of Logic = 1)
+  Source:            UTx/state_0 (LATCH)
+  Destination:       UTx/state_0 (LATCH)
+  Source Clock:      UTx/state_0_G falling
+  Destination Clock: UTx/state_0_G falling
+
+  Data Path: UTx/state_0 to UTx/state_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q              75   0.581   2.123  UTx/state_0 (UTx/state_0)
+     LUT3:I1->O            4   0.250   0.000  UTx/GND_120_o_tx_start_AND_340_o1 (UTx/state_0_D)
+     LD:D                      0.036          UTx/state_0
+    ----------------------------------------
+    Total                      2.990ns (0.867ns logic, 2.123ns route)
+                                       (29.0% logic, 71.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'URx/state_0_G'
+  Clock period: 5.653ns (frequency: 176.903MHz)
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Delay:               5.653ns (Levels of Logic = 3)
+  Source:            URx/state_0 (LATCH)
+  Destination:       URx/state_0 (LATCH)
+  Source Clock:      URx/state_0_G falling
+  Destination Clock: URx/state_0_G falling
+
+  Data Path: URx/state_0 to URx/state_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q              80   0.581   2.509  URx/state_0 (URx/state_0)
+     LUT6:I0->O            2   0.254   0.726  URx/GND_5_o_GND_5_o_AND_21_o11 (URx/GND_5_o_GND_5_o_AND_21_o11)
+     LUT6:I5->O           11   0.254   1.039  URx/GND_5_o_GND_5_o_AND_3_o1 (URx/GND_5_o_GND_5_o_AND_3_o)
+     LUT6:I5->O            1   0.254   0.000  URx/state_0_D (URx/state_0_D)
+     LD:D                      0.036          URx/state_0
+    ----------------------------------------
+    Total                      5.653ns (1.379ns logic, 4.274ns route)
+                                       (24.4% logic, 75.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'UTx/GND_120_o_GND_120_o_MUX_1000_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.852ns (Levels of Logic = 2)
+  Source:            w_start (PAD)
+  Destination:       UTx/tx (LATCH)
+  Destination Clock: UTx/GND_120_o_GND_120_o_MUX_1000_o falling
+
+  Data Path: w_start to UTx/tx
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   1.328   1.008  w_start_IBUF (w_start_IBUF)
+     LUT3:I2->O            4   0.254   0.803  UTx/GND_120_o_tx_start_AND_340_o1 (UTx/state_0_D)
+     LDC:CLR                   0.459          UTx/tx
+    ----------------------------------------
+    Total                      3.852ns (2.041ns logic, 1.811ns route)
+                                       (53.0% logic, 47.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'UTx/GND_120_o_GND_120_o_AND_341_o'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.852ns (Levels of Logic = 2)
+  Source:            w_start (PAD)
+  Destination:       UTx/state_1 (LATCH)
+  Destination Clock: UTx/GND_120_o_GND_120_o_AND_341_o rising
+
+  Data Path: w_start to UTx/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   1.328   1.008  w_start_IBUF (w_start_IBUF)
+     LUT3:I2->O            4   0.254   0.803  UTx/GND_120_o_tx_start_AND_340_o1 (UTx/state_0_D)
+     LDCE_1:CLR                0.459          UTx/state_1
+    ----------------------------------------
+    Total                      3.852ns (2.041ns logic, 1.811ns route)
+                                       (53.0% logic, 47.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'UTx/GND_120_o_state[31]_equal_1_o'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              2.637ns (Levels of Logic = 1)
+  Source:            w_start (PAD)
+  Destination:       UTx/reg_0 (LATCH)
+  Destination Clock: UTx/GND_120_o_state[31]_equal_1_o falling
+
+  Data Path: w_start to UTx/reg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   1.328   1.007  w_start_IBUF (w_start_IBUF)
+     LDE:GE                    0.302          UTx/reg_7
+    ----------------------------------------
+    Total                      2.637ns (1.630ns logic, 1.007ns route)
+                                       (61.8% logic, 38.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.029ns (Levels of Logic = 2)
+  Source:            rx (PAD)
+  Destination:       URx/state_1 (LATCH)
+  Destination Clock: URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322 rising
+
+  Data Path: rx to URx/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.326  rx_IBUF (rx_IBUF)
+     LUT3:I0->O            1   0.235   0.681  URx/GND_5_o_rx_AND_1_o1 (URx/GND_5_o_rx_AND_1_o)
+     LDCE_1:CLR                0.459          URx/state_1
+    ----------------------------------------
+    Total                      4.029ns (2.022ns logic, 2.007ns route)
+                                       (50.2% logic, 49.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_189_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_0 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_189_o falling
+
+  Data Path: rx to URx/reg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_0
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_184_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_1 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_184_o falling
+
+  Data Path: rx to URx/reg_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_1
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_179_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_2 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_179_o falling
+
+  Data Path: rx to URx/reg_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_2
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_174_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_3 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_174_o falling
+
+  Data Path: rx to URx/reg_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_3
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_169_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_4 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_169_o falling
+
+  Data Path: rx to URx/reg_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_4
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_159_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_6 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_159_o falling
+
+  Data Path: rx to URx/reg_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_6
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_154_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_7 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_154_o falling
+
+  Data Path: rx to URx/reg_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_7
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/GND_5_o_GND_5_o_AND_164_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.461ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       URx/reg_5 (LATCH)
+  Destination Clock: URx/GND_5_o_GND_5_o_AND_164_o falling
+
+  Data Path: rx to URx/reg_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.097  rx_IBUF (rx_IBUF)
+     LD:D                      0.036          URx/reg_5
+    ----------------------------------------
+    Total                      2.461ns (1.364ns logic, 1.097ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'UTx/state_0_G'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.626ns (Levels of Logic = 2)
+  Source:            w_start (PAD)
+  Destination:       UTx/state_0 (LATCH)
+  Destination Clock: UTx/state_0_G falling
+
+  Data Path: w_start to UTx/state_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   1.328   1.008  w_start_IBUF (w_start_IBUF)
+     LUT3:I2->O            4   0.254   0.000  UTx/GND_120_o_tx_start_AND_340_o1 (UTx/state_0_D)
+     LD:D                      0.036          UTx/state_0
+    ----------------------------------------
+    Total                      2.626ns (1.618ns logic, 1.008ns route)
+                                       (61.6% logic, 38.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'URx/state_0_G'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.992ns (Levels of Logic = 2)
+  Source:            rx (PAD)
+  Destination:       URx/state_0 (LATCH)
+  Destination Clock: URx/state_0_G falling
+
+  Data Path: rx to URx/state_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.374  rx_IBUF (rx_IBUF)
+     LUT6:I2->O            1   0.254   0.000  URx/state_0_D (URx/state_0_D)
+     LD:D                      0.036          URx/state_0
+    ----------------------------------------
+    Total                      2.992ns (1.618ns logic, 1.374ns route)
+                                       (54.1% logic, 45.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'URx/GND_5_o_GND_5_o_AND_291_o'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.174ns (Levels of Logic = 1)
+  Source:            URx/d_out_7 (LATCH)
+  Destination:       r_data<7> (PAD)
+  Source Clock:      URx/GND_5_o_GND_5_o_AND_291_o falling
+
+  Data Path: URx/d_out_7 to r_data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.581   0.681  URx/d_out_7 (URx/d_out_7)
+     OBUF:I->O                 2.912          r_data_7_OBUF (r_data<7>)
+    ----------------------------------------
+    Total                      4.174ns (3.493ns logic, 0.681ns route)
+                                       (83.7% logic, 16.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'UTx/GND_120_o_GND_120_o_MUX_1000_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.174ns (Levels of Logic = 1)
+  Source:            UTx/tx (LATCH)
+  Destination:       tx (PAD)
+  Source Clock:      UTx/GND_120_o_GND_120_o_MUX_1000_o falling
+
+  Data Path: UTx/tx to tx
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.581   0.681  UTx/tx (UTx/tx)
+     OBUF:I->O                 2.912          tx_OBUF (tx)
+    ----------------------------------------
+    Total                      4.174ns (3.493ns logic, 0.681ns route)
+                                       (83.7% logic, 16.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock URx/GND_5_o_GND_5_o_AND_192_o
+--------------------------------------------------------+---------+---------+---------+---------+
+                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------+---------+---------+---------+---------+
+URx/GND_5_o_GND_5_o_AND_192_o                           |         |         |    5.363|         |
+URx/GND_5_o_rx_AND_1_o                                  |         |         |    5.214|         |
+URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322|         |         |    3.380|         |
+URx/state_0_G                                           |         |         |    3.355|         |
+--------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock URx/GND_5_o_GND_5_o_AND_291_o
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+URx/GND_5_o_GND_5_o_AND_154_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_159_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_164_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_169_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_174_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_179_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_184_o|         |         |    1.298|         |
+URx/GND_5_o_GND_5_o_AND_189_o|         |         |    1.298|         |
+-----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock URx/GND_5_o_rx_AND_1_o
+--------------------------------------------------------+---------+---------+---------+---------+
+                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------+---------+---------+---------+---------+
+URx/GND_5_o_GND_5_o_AND_192_o                           |         |   12.089|         |         |
+URx/GND_5_o_rx_AND_1_o                                  |    7.584|         |         |         |
+URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322|    6.937|         |         |         |
+URx/state_0_G                                           |         |    8.859|         |         |
+--------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322
+--------------------------------------------------------+---------+---------+---------+---------+
+                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------+---------+---------+---------+---------+
+URx/GND_5_o_GND_5_o_AND_192_o                           |         |   10.879|         |         |
+URx/GND_5_o_rx_AND_1_o                                  |    6.530|         |         |         |
+URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322|    4.970|         |         |         |
+URx/state_0_G                                           |         |    7.563|         |         |
+--------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock URx/state_0_G
+--------------------------------------------------------+---------+---------+---------+---------+
+                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------------------+---------+---------+---------+---------+
+URx/GND_5_o_GND_5_o_AND_192_o                           |         |         |    9.184|         |
+URx/GND_5_o_rx_AND_1_o                                  |         |         |    6.075|         |
+URx/Mmux_tick_counter[31]_tick_counter[31]_MUX_287_o1322|         |         |    4.322|         |
+URx/state_0_G                                           |         |         |    5.653|         |
+--------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock UTx/GND_120_o_GND_120_o_AND_341_o
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+UTx/GND_120_o_GND_120_o_AND_341_o|    6.358|         |         |         |
+UTx/state_0_D                    |    6.395|         |         |         |
+UTx/state_0_G                    |         |    7.716|         |         |
+---------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock UTx/GND_120_o_GND_120_o_MUX_1000_o
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+UTx/GND_120_o_GND_120_o_AND_341_o|         |         |    4.313|         |
+UTx/GND_120_o_state[31]_equal_1_o|         |         |    2.940|         |
+UTx/state_0_D                    |         |         |    5.124|         |
+UTx/state_0_G                    |         |         |    4.216|         |
+---------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock UTx/state_0_D
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+UTx/GND_120_o_GND_120_o_AND_341_o|    7.008|         |         |         |
+UTx/state_0_D                    |    7.045|         |         |         |
+UTx/state_0_G                    |         |    8.366|         |         |
+---------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock UTx/state_0_G
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+UTx/GND_120_o_GND_120_o_AND_341_o|         |         |    3.087|         |
+UTx/state_0_G                    |         |         |    2.990|         |
+---------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.34 secs
+ 
+--> 
+
+Total memory usage is 259672 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  209 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

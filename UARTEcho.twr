@@ -1,0 +1,537 @@
+--------------------------------------------------------------------------------
+Release 14.6 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml UARTEcho.twx UARTEcho.ncd -o UARTEcho.twr UARTEcho.pcf
+-ucf UARTEcho.ucf
+
+Design file:              UARTEcho.ncd
+Physical constraint file: UARTEcho.pcf
+Device,package,speed:     xc6slx45,fgg676,C,-2 (PRODUCTION 1.23 2013-06-08)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1083 paths analyzed, 316 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.775ns.
+--------------------------------------------------------------------------------
+
+Paths for end point UARTCon/URx/ledReg_0 (SLICE_X46Y92.B2), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     33.262ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/URx/tick_counter_0 (FF)
+  Destination:          UARTCon/URx/ledReg_0 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.727ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.194 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/URx/tick_counter_0 to UARTCon/URx/ledReg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y94.AQ      Tcko                  0.476   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/tick_counter_0
+    SLICE_X47Y91.C2      net (fanout=15)       1.168   UARTCon/URx/tick_counter<0>
+    SLICE_X47Y91.C       Tilo                  0.259   N14
+                                                       UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1_1
+    SLICE_X47Y91.D5      net (fanout=1)        0.234   UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1
+    SLICE_X47Y91.D       Tilo                  0.259   N14
+                                                       UARTCon/URx/Mmux_ledRegNext11_SW1
+    SLICE_X46Y92.B2      net (fanout=1)        0.982   N14
+    SLICE_X46Y92.CLK     Tas                   0.349   UARTCon/URx/ledReg<2>
+                                                       UARTCon/URx/Mmux_ledRegNext14
+                                                       UARTCon/URx/ledReg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.727ns (1.343ns logic, 2.384ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     33.668ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/URx/tick_counter_1 (FF)
+  Destination:          UARTCon/URx/ledReg_0 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.321ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.194 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/URx/tick_counter_1 to UARTCon/URx/ledReg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y94.BQ      Tcko                  0.476   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/tick_counter_1
+    SLICE_X47Y91.C4      net (fanout=14)       0.762   UARTCon/URx/tick_counter<1>
+    SLICE_X47Y91.C       Tilo                  0.259   N14
+                                                       UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1_1
+    SLICE_X47Y91.D5      net (fanout=1)        0.234   UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1
+    SLICE_X47Y91.D       Tilo                  0.259   N14
+                                                       UARTCon/URx/Mmux_ledRegNext11_SW1
+    SLICE_X46Y92.B2      net (fanout=1)        0.982   N14
+    SLICE_X46Y92.CLK     Tas                   0.349   UARTCon/URx/ledReg<2>
+                                                       UARTCon/URx/Mmux_ledRegNext14
+                                                       UARTCon/URx/ledReg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.321ns (1.343ns logic, 1.978ns route)
+                                                       (40.4% logic, 59.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     33.774ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/URx/tick_counter_2 (FF)
+  Destination:          UARTCon/URx/ledReg_0 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.215ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.194 - 0.207)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/URx/tick_counter_2 to UARTCon/URx/ledReg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y94.CQ      Tcko                  0.476   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/tick_counter_2
+    SLICE_X47Y91.C5      net (fanout=15)       0.656   UARTCon/URx/tick_counter<2>
+    SLICE_X47Y91.C       Tilo                  0.259   N14
+                                                       UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1_1
+    SLICE_X47Y91.D5      net (fanout=1)        0.234   UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1
+    SLICE_X47Y91.D       Tilo                  0.259   N14
+                                                       UARTCon/URx/Mmux_ledRegNext11_SW1
+    SLICE_X46Y92.B2      net (fanout=1)        0.982   N14
+    SLICE_X46Y92.CLK     Tas                   0.349   UARTCon/URx/ledReg<2>
+                                                       UARTCon/URx/Mmux_ledRegNext14
+                                                       UARTCon/URx/ledReg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.215ns (1.343ns logic, 1.872ns route)
+                                                       (41.8% logic, 58.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UARTCon/URx/tick_counter_0 (SLICE_X46Y94.A3), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     33.433ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/BRG/brojac_6 (FF)
+  Destination:          UARTCon/URx/tick_counter_0 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.560ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.009ns (0.296 - 0.305)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/BRG/brojac_6 to UARTCon/URx/tick_counter_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y90.CQ      Tcko                  0.476   UARTCon/BRG/brojac<7>
+                                                       UARTCon/BRG/brojac_6
+    SLICE_X43Y89.B3      net (fanout=3)        0.573   UARTCon/BRG/brojac<6>
+    SLICE_X43Y89.B       Tilo                  0.259   N2
+                                                       UARTCon/BRG/tick<7>_SW0
+    SLICE_X46Y91.A5      net (fanout=15)       0.716   N2
+    SLICE_X46Y91.A       Tilo                  0.235   UARTCon/URx/tick_counter<3>
+                                                       UARTCon/BRG/tick<7>_1
+    SLICE_X46Y94.A3      net (fanout=15)       0.952   UARTCon/BRG/tick<7>
+    SLICE_X46Y94.CLK     Tas                   0.349   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next11
+                                                       UARTCon/URx/tick_counter_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.560ns (1.319ns logic, 2.241ns route)
+                                                       (37.1% logic, 62.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     33.446ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/BRG/brojac_3 (FF)
+  Destination:          UARTCon/URx/tick_counter_0 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.549ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.007ns (0.296 - 0.303)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/BRG/brojac_3 to UARTCon/URx/tick_counter_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y89.DQ      Tcko                  0.476   UARTCon/BRG/brojac<3>
+                                                       UARTCon/BRG/brojac_3
+    SLICE_X43Y89.B2      net (fanout=3)        0.562   UARTCon/BRG/brojac<3>
+    SLICE_X43Y89.B       Tilo                  0.259   N2
+                                                       UARTCon/BRG/tick<7>_SW0
+    SLICE_X46Y91.A5      net (fanout=15)       0.716   N2
+    SLICE_X46Y91.A       Tilo                  0.235   UARTCon/URx/tick_counter<3>
+                                                       UARTCon/BRG/tick<7>_1
+    SLICE_X46Y94.A3      net (fanout=15)       0.952   UARTCon/BRG/tick<7>
+    SLICE_X46Y94.CLK     Tas                   0.349   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next11
+                                                       UARTCon/URx/tick_counter_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.549ns (1.319ns logic, 2.230ns route)
+                                                       (37.2% logic, 62.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     33.637ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/BRG/brojac_2 (FF)
+  Destination:          UARTCon/URx/tick_counter_0 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.358ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.007ns (0.296 - 0.303)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/BRG/brojac_2 to UARTCon/URx/tick_counter_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y89.CQ      Tcko                  0.476   UARTCon/BRG/brojac<3>
+                                                       UARTCon/BRG/brojac_2
+    SLICE_X43Y89.B4      net (fanout=3)        0.371   UARTCon/BRG/brojac<2>
+    SLICE_X43Y89.B       Tilo                  0.259   N2
+                                                       UARTCon/BRG/tick<7>_SW0
+    SLICE_X46Y91.A5      net (fanout=15)       0.716   N2
+    SLICE_X46Y91.A       Tilo                  0.235   UARTCon/URx/tick_counter<3>
+                                                       UARTCon/BRG/tick<7>_1
+    SLICE_X46Y94.A3      net (fanout=15)       0.952   UARTCon/BRG/tick<7>
+    SLICE_X46Y94.CLK     Tas                   0.349   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next11
+                                                       UARTCon/URx/tick_counter_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.358ns (1.319ns logic, 2.039ns route)
+                                                       (39.3% logic, 60.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UARTCon/URx/tick_counter_2 (SLICE_X46Y94.C4), 7 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     33.444ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/URx/tick_counter_2 (FF)
+  Destination:          UARTCon/URx/tick_counter_2 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.558ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/URx/tick_counter_2 to UARTCon/URx/tick_counter_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y94.CQ      Tcko                  0.476   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/tick_counter_2
+    SLICE_X46Y91.D2      net (fanout=15)       1.002   UARTCon/URx/tick_counter<2>
+    SLICE_X46Y91.D       Tilo                  0.235   UARTCon/URx/tick_counter<3>
+                                                       UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1
+    SLICE_X46Y94.D5      net (fanout=20)       0.685   UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o
+    SLICE_X46Y94.D       Tilo                  0.235   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next111_SW5
+    SLICE_X46Y94.C4      net (fanout=1)        0.576   N59
+    SLICE_X46Y94.CLK     Tas                   0.349   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next31
+                                                       UARTCon/URx/tick_counter_2
+    -------------------------------------------------  ---------------------------
+    Total                                      3.558ns (1.295ns logic, 2.263ns route)
+                                                       (36.4% logic, 63.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     33.722ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/URx/tick_counter_1 (FF)
+  Destination:          UARTCon/URx/tick_counter_2 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.280ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/URx/tick_counter_1 to UARTCon/URx/tick_counter_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y94.BQ      Tcko                  0.476   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/tick_counter_1
+    SLICE_X46Y91.D4      net (fanout=14)       0.724   UARTCon/URx/tick_counter<1>
+    SLICE_X46Y91.D       Tilo                  0.235   UARTCon/URx/tick_counter<3>
+                                                       UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1
+    SLICE_X46Y94.D5      net (fanout=20)       0.685   UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o
+    SLICE_X46Y94.D       Tilo                  0.235   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next111_SW5
+    SLICE_X46Y94.C4      net (fanout=1)        0.576   N59
+    SLICE_X46Y94.CLK     Tas                   0.349   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next31
+                                                       UARTCon/URx/tick_counter_2
+    -------------------------------------------------  ---------------------------
+    Total                                      3.280ns (1.295ns logic, 1.985ns route)
+                                                       (39.5% logic, 60.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     33.741ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UARTCon/URx/tick_counter_0 (FF)
+  Destination:          UARTCon/URx/tick_counter_2 (FF)
+  Requirement:          37.037ns
+  Data Path Delay:      3.261ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UARTCon/URx/tick_counter_0 to UARTCon/URx/tick_counter_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y94.AQ      Tcko                  0.476   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/tick_counter_0
+    SLICE_X46Y91.D5      net (fanout=15)       0.705   UARTCon/URx/tick_counter<0>
+    SLICE_X46Y91.D       Tilo                  0.235   UARTCon/URx/tick_counter<3>
+                                                       UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o1
+    SLICE_X46Y94.D5      net (fanout=20)       0.685   UARTCon/URx/tick_counter[3]_PWR_7_o_LessThan_36_o
+    SLICE_X46Y94.D       Tilo                  0.235   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next111_SW5
+    SLICE_X46Y94.C4      net (fanout=1)        0.576   N59
+    SLICE_X46Y94.CLK     Tas                   0.349   UARTCon/URx/tick_counter<2>
+                                                       UARTCon/URx/Mmux_tick_counter_next31
+                                                       UARTCon/URx/tick_counter_2
+    -------------------------------------------------  ---------------------------
+    Total                                      3.261ns (1.295ns logic, 1.966ns route)
+                                                       (39.7% logic, 60.3% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point EchoModul/d_out_reg_7 (SLICE_X47Y86.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.444ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               EchoModul/d_out_reg_7 (FF)
+  Destination:          EchoModul/d_out_reg_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.444ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 37.037ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: EchoModul/d_out_reg_7 to EchoModul/d_out_reg_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y86.DQ      Tcko                  0.198   EchoModul/d_out_reg<7>
+                                                       EchoModul/d_out_reg_7
+    SLICE_X47Y86.D6      net (fanout=3)        0.031   EchoModul/d_out_reg<7>
+    SLICE_X47Y86.CLK     Tah         (-Th)    -0.215   EchoModul/d_out_reg<7>
+                                                       EchoModul/d_out_reg_7_rstpot
+                                                       EchoModul/d_out_reg_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.444ns (0.413ns logic, 0.031ns route)
+                                                       (93.0% logic, 7.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UARTCon/UTx/bit_counter_0 (SLICE_X44Y88.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.464ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UARTCon/UTx/bit_counter_0 (FF)
+  Destination:          UARTCon/UTx/bit_counter_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.464ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 37.037ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UARTCon/UTx/bit_counter_0 to UARTCon/UTx/bit_counter_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X44Y88.AQ      Tcko                  0.234   UARTCon/UTx/bit_counter<1>
+                                                       UARTCon/UTx/bit_counter_0
+    SLICE_X44Y88.A6      net (fanout=5)        0.033   UARTCon/UTx/bit_counter<0>
+    SLICE_X44Y88.CLK     Tah         (-Th)    -0.197   UARTCon/UTx/bit_counter<1>
+                                                       UARTCon/UTx/bit_counter_0_dpot
+                                                       UARTCon/UTx/bit_counter_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.464ns (0.431ns logic, 0.033ns route)
+                                                       (92.9% logic, 7.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UARTCon/URx/reg_2 (SLICE_X50Y88.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.466ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UARTCon/URx/reg_2 (FF)
+  Destination:          UARTCon/URx/reg_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.466ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 37.037ns
+  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UARTCon/URx/reg_2 to UARTCon/URx/reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y88.CQ      Tcko                  0.200   UARTCon/URx/reg<3>
+                                                       UARTCon/URx/reg_2
+    SLICE_X50Y88.C5      net (fanout=3)        0.076   UARTCon/URx/reg<2>
+    SLICE_X50Y88.CLK     Tah         (-Th)    -0.190   UARTCon/URx/reg<3>
+                                                       UARTCon/URx/reg_2_rstpot
+                                                       UARTCon/URx/reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.466ns (0.390ns logic, 0.076ns route)
+                                                       (83.7% logic, 16.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 34.371ns (period - min period limit)
+  Period: 37.037ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y2.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 36.557ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 37.037ns
+  High pulse: 18.518ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: UARTCon/UTx/bit_counter<1>/SR
+  Logical resource: UARTCon/UTx/bit_counter_0/SR
+  Location pin: SLICE_X44Y88.SR
+  Clock network: rst_IBUF
+--------------------------------------------------------------------------------
+Slack: 36.557ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 37.037ns
+  High pulse: 18.518ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: UARTCon/UTx/bit_counter<1>/SR
+  Logical resource: UARTCon/UTx/bit_counter_1/SR
+  Location pin: SLICE_X44Y88.SR
+  Clock network: rst_IBUF
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.775|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1083 paths, 0 nets, and 609 connections
+
+Design statistics:
+   Minimum period:   3.775ns{1}   (Maximum frequency: 264.901MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Mar 14 16:52:02 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 261 MB
+
+
+
